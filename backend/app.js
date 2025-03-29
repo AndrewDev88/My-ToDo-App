@@ -12,7 +12,7 @@ import taskRouter from './src/routes/task.routes.js';
 import authRouter from './src/routes/auth.routes.js';
 import logger from './src/utils/logger.js';
 
-import { errorHandler } from './src/middlewares/errorHandler.js';
+import { errorHandler } from './src/middlewares/error.middleware.js';
 
 import './src/models/index.js';
 import { createInitialAdmin } from './src/utils/InitAdmin.js';
