@@ -46,26 +46,6 @@ A full-stack ToDo application built using **Node.js**, **Express**, **Sequelize*
 
 ---
 
-## 🚀 Getting Started
-
-### 🔧 Development Mode
-
-#### Backend
-
-```bash
-cd backend
-npm install
-npm run dev
-```
-
-#### Frontend
-
-```bash
-cd frontend
-npm install
-npm run dev
-```
-
 #### 🧪 Environment Variables
 
 Create `.env` in `/backend`:
@@ -85,6 +65,30 @@ INIT_ADMIN_PASSWORD=Admin12345
 
 FRONTEND_URL=http://localhost:5173
 NODE_ENV=development
+```
+
+Default admin email for singIn : admin@example.com
+
+---
+
+## 🚀 Getting Started
+
+### 🔧 Development Mode
+
+#### Backend
+
+```bash
+cd backend
+npm install
+npm run dev
+```
+
+#### Frontend
+
+```bash
+cd frontend
+npm install
+npm run dev
 ```
 
 ---
