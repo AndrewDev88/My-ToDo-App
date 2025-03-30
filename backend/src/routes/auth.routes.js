@@ -9,6 +9,6 @@ router.post('/signup',validateRegister,authController.signUp);
 router.post('/login',validateLogin,authController.login);
 router.post('/logout',authMiddleware,authController.logout);
 
-router.get('/me',authMiddleware,authController.getUserInfo);
+router.get('/me',authController.getUserInfo);
 
 export default router;
