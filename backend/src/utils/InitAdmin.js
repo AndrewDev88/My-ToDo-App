@@ -11,7 +11,7 @@ export async function createInitialAdmin() {
 
   if (!existingAdmin) {
     const hashedPassword = bcrypt.hash(process.env.INIT_ADMIN_PASSWORD, 10);
-    const hashedPasswordString = await hashedPassword;
+    const hashedPasswordString = hashedPassword;
     await User.create({
       username: 'admin',
       email: 'admin@example.com',

@@ -7,14 +7,16 @@ import { checkIfUserOwnsTask } from '../middlewares/taskOwnership.middleware.js'
 
 const router = Router();
 
-router.get('/all',authMiddleware,roleMiddleware(['admin']),taskController.getAllTasks);
-router.get('/',authMiddleware,roleMiddleware(['user','admin']),taskController.getAllUserTasks);
-router.get('/:id',authMiddleware,roleMiddleware(['user','admin']),checkIfUserOwnsTask,taskController.getTaskById);
+router.use(authMiddleware);
 
-router.post('/',authMiddleware,roleMiddleware(['user']),validateTask,taskController.createTask);
+router.get('/all', roleMiddleware(['admin']), taskController.getAllTasks);
+router.get('/', roleMiddleware(['user','admin']), taskController.getAllUserTasks);
+router.get('/:id', roleMiddleware(['user','admin']), checkIfUserOwnsTask, taskController.getTaskById);
 
-router.put('/:id',authMiddleware,roleMiddleware(['user']),checkIfUserOwnsTask,taskController.updateTask);
+router.post('/', roleMiddleware(['user']), validateTask, taskController.createTask);
 
-router.delete('/:id',authMiddleware,roleMiddleware(['user','admin']),checkIfUserOwnsTask,taskController.deleteTask);
+router.put('/:id', roleMiddleware(['user']), checkIfUserOwnsTask, taskController.updateTask);
+
+router.delete('/:id', roleMiddleware(['user','admin']), checkIfUserOwnsTask, taskController.deleteTask);
 
 export default router;

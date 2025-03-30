@@ -1,4 +1,3 @@
-// models/task.model.js
 import { DataTypes } from 'sequelize';
 import sequelize from '../database/db.js';
 
